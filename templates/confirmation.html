@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Wildlife Park Booking System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS  -->
+        <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+        <!-- Javascript -->
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <div class="form-header">
+                                <h1 style="color: rgb(76, 153, 222);">Confirmation</h1>
+                            </div>
+                            <div class="form-header">
+                                <h6 style="color: rgb(76, 153, 222);">Booking Number: {{ posts[0] }}</h6>
+                            </div>
+                            <div class="form-header">
+                                <h6 style="color: rgb(76, 153, 222);">Date: {{ posts[1] }}</h6>
+                            </div>
+                            <div>
+                                <h5 style="color: aliceblue;">Booking Details</h5>
+                            </div>
+                            <table class="table table-sm" id="table1" style="color: aliceblue;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Ticket Type</th>
+                                    <th scope="col">Days</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Price</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for post in posts[2] %}
+                                    <tr>
+                                        <td>{{ post[0] }}</td>
+                                        <td>{{ post[1] }}</td>
+                                        <td>{{ post[2] }}</td>
+                                        <td>{{ post[3] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <div>
+                                <h5 style="color: aliceblue;">Total Price: {{ posts[3] }}</h5>
+                                <h7 style="color: aliceblue;">(With Attractions: {{ posts[6] }})</h7>
+                            </div>
+                            <div>
+                                <h5 style="color: #85a0b6;">Alternative</h5>
+                            </div>
+                            <table class="table table-sm" id="table2" style="color: #85a0b6;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Ticket Type</th>
+                                    <th scope="col">Days</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Price</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for post in posts[4] %}
+                                    <tr>
+                                        <td>{{ post[0] }}</td>
+                                        <td>{{ post[1] }}</td>
+                                        <td>{{ post[2] }}</td>
+                                        <td>{{ post[3] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <div>
+                                <h5 style="color: #85a0b6;">Total Price: {{ posts[5] }}</h5>
+                                <h7 style="color: #85a0b6;">(With Attractions: {{ posts[7] }})</h7>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-btn"><a href="/home"><button class="submit-btn">Back</button></a></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-btn"><a href="/complete"><button class="submit-btn">Confirm</button></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>

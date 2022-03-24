@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Wildlife Park Booking System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS  -->
+        <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+        <!-- Javascript -->
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <div id="booking" class="section">
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <table class="table table-sm" id="table1" style="color: aliceblue;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Ticket Type</th>
+                                    <th scope="col">One Day Cost</th>
+                                    <th scope="col">Two Day Cost</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for option in posts[0] %}
+                                    <tr>
+                                        <td>{{ option[0] }}</td>
+                                        <td>{{ option[1] }}</td>
+                                        <td>{{ option[2] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <table class="table table-sm" id="table2" style="color: aliceblue;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Extra Attraction</th>
+                                    <th scope="col">Cost Per Person</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for attraction in posts[1] %}
+                                    <tr>
+                                        <td>{{ attraction[0] }}</td>
+                                        <td>{{ attraction[1] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <table class="table table-sm" id="table3" style="color: aliceblue;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Days Available</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr> 
+                                        {% for day in posts[2] %}
+                                        <td>{{ day }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-btn"> 
+                                <a href="/home">
+                                    <button class="submit-btn">Go Booking</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>
